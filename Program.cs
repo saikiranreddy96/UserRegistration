@@ -10,8 +10,15 @@ namespace UserRegistration
     {
         static void Main(string[] args)
         {
-            //UserRegistrationValidation.ValidateFirstName();
+            //Calling Methods
+
+            //UC1
+            UserRegistrationValidation.ValidateFirstName();
+            //UC2
             UserRegistrationValidation.ValidateLastName();
+            //UC3
+            UserRegistrationValidation.ValidateEmail();
+
             Console.ReadLine();
         }
     }
