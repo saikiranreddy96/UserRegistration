@@ -16,7 +16,7 @@ namespace UserRegistration
             string firstName = Console.ReadLine();
             string firstName_pattern = "^[A-Z][a-z]{2,}$";
 
-            if (Regex.IsMatch(firstName , firstName_pattern))
+            if (Regex.IsMatch(firstName, firstName_pattern))
             {
                 Console.WriteLine("First Name is Valid");
             }
@@ -34,7 +34,7 @@ namespace UserRegistration
             string lastName = Console.ReadLine();
             string lastName_pattern = "^[A-Z][a-z]{2,}$";
 
-            if (Regex.IsMatch(lastName , lastName_pattern))
+            if (Regex.IsMatch(lastName, lastName_pattern))
             {
                 Console.WriteLine("Last Name is Valid");
             }
@@ -79,5 +79,21 @@ namespace UserRegistration
             }
         }
 
+        //UC5-validate password
+        public static void ValidatePassword()
+        {
+            Console.WriteLine("\nPlease Enter your Password:");
+            string password = Console.ReadLine();
+            string password_pattern = "^[a-zA-Z0-9-+_!@#$%^&*.,()?]{8,}$";
+
+            if (Regex.IsMatch(password, password_pattern))
+            {
+                Console.WriteLine("  Password is Valid");
+            }
+            else
+            {
+                Console.WriteLine("Password is not Valid");
+            }
+        }
     }
 }
