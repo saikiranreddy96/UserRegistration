@@ -79,7 +79,7 @@ namespace UserRegistration
             }
         }
 
-        //UC5-validate password
+        //UC5-validate password must have 8 characters
         public static void ValidatePassword()
         {
             Console.WriteLine("\nPlease Enter your Password:");
