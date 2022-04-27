@@ -84,8 +84,8 @@ namespace UserRegistration
         {
             Console.WriteLine("\nPlease Enter your Password:");
             string password = Console.ReadLine();
-            string password_pattern = "^[a-zA-Z0-9-+_!@#$%^&*.,()?]{8,}$";
-
+            //string password_pattern = "^[a-zA-Z0-9-+_!@#$%^&*.,()?]{8,}$";     //must have 8 characters
+            string password_pattern = "^(?=.*[A-Z])[A-Za-z0-9!@#$%^&*()]{8,}$";  //must have 1 uppercase
             if (Regex.IsMatch(password, password_pattern))
             {
                 Console.WriteLine("  Password is Valid");
