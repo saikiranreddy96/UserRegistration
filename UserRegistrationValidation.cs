@@ -59,6 +59,25 @@ namespace UserRegistration
             {
                 Console.WriteLine("Email is not Valid");
             }
+
         }
+
+        //UC4-validate mobile number
+        public static void ValidateMobileNumber()
+        {
+            Console.WriteLine("\nPlease Enter your Mobie Number:");
+            string mobileNumber = Console.ReadLine();
+            string mobileNumber_pattern = "^[+]?91[ -][1-9][0-9]{9}$";
+
+            if (Regex.IsMatch(mobileNumber, mobileNumber_pattern))
+            {
+                Console.WriteLine("Mobie Number is Valid");
+            }
+            else
+            {
+                Console.WriteLine("Mobie Number is not Valid");
+            }
+        }
+
     }
 }

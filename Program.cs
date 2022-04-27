@@ -12,12 +12,14 @@ namespace UserRegistration
         {
             //Calling Methods
 
-            //UC1
-            UserRegistrationValidation.ValidateFirstName();
-            //UC2
-            UserRegistrationValidation.ValidateLastName();
-            //UC3
-            UserRegistrationValidation.ValidateEmail();
+            ////UC1
+            //UserRegistrationValidation.ValidateFirstName();
+            ////UC2
+            //UserRegistrationValidation.ValidateLastName();
+            ////UC3
+            //UserRegistrationValidation.ValidateEmail();
+            ////UC4
+            UserRegistrationValidation.ValidateMobileNumber();
 
             Console.ReadLine();
         }
