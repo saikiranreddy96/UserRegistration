@@ -23,7 +23,7 @@ namespace UserRegistration
             ////UC4
             //UserRegistrationValidation.ValidateMobileNumber();
 
-            //UC5+UC6+UC7
+            //UC5+UC6+UC7+UC8
             UserRegistrationValidation.ValidatePassword();
 
             Console.ReadLine();

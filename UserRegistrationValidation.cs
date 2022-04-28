@@ -80,15 +80,15 @@ namespace UserRegistration
             }
         }
 
-        //validate password-UC5+UC6+UC7
+        //validate password-UC5+UC6+UC7+UC8
         public static void ValidatePassword()
         {
             Console.WriteLine("\nPlease Enter your Password:");
             string password = Console.ReadLine();
             //string password_Pattern = "^[a-zA-Z]{8,}$";        //must have atleast 8 characters
             //string password_Pattern = "^(?=.*[a-z])(?=.*[A-Z]).{8,}$";         //must have atleat 1 uppercase
-            string password_Pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$";        //must have atleast 1 number
-
+            //string password_Pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$";        //must have atleast 1 number
+            string password_Pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[&%$#@?^*!~]).{8,}$";      //must have atleast 1 special character
 
             if (Regex.IsMatch(password, password_Pattern))
             {
