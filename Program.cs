@@ -9,8 +9,7 @@ namespace UserRegistration
     internal class Program
     {
         static void Main(string[] args)
-        {
-            //Calling Methods
+        { //Calling Methods
 
             ////UC1
             //UserRegistrationValidation.ValidateFirstName();
@@ -28,6 +27,7 @@ namespace UserRegistration
             UserRegistrationValidation.ValidatePassword();
 
             Console.ReadLine();
+
         }
     }
 }

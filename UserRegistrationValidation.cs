@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
+
 namespace UserRegistration
 {
     internal class UserRegistrationValidation
@@ -79,15 +80,17 @@ namespace UserRegistration
             }
         }
 
-        //validate password
+        //validate password-UC5+UC6+UC7
         public static void ValidatePassword()
         {
             Console.WriteLine("\nPlease Enter your Password:");
             string password = Console.ReadLine();
-            //string password_pattern = "^[a-zA-Z0-9-+_!@#$%^&*.,()?]{8,}$";               //must have 8 characters
-            //string password_pattern = "^(?=.*[A-Z])[A-Za-z0-9!@#$%^&*()]{8,}$";                //must have atleast 1 uppercase
-             string password_pattern = "^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9-+_!@#$%^&*.,?]{8,}$";     //must have atleast 1 nummeric number
-            if (Regex.IsMatch(password, password_pattern))
+            //string password_Pattern = "^[a-zA-Z]{8,}$";        //must have atleast 8 characters
+            //string password_Pattern = "^(?=.*[a-z])(?=.*[A-Z]).{8,}$";         //must have atleat 1 uppercase
+            string password_Pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$";        //must have atleast 1 number
+
+
+            if (Regex.IsMatch(password, password_Pattern))
             {
                 Console.WriteLine("  Password is Valid");
             }
