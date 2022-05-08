@@ -9,25 +9,35 @@ namespace UserRegistration
     internal class Program
     {
         static void Main(string[] args)
-        { //Calling Methods
+        {
+            Console.WriteLine("Welcome To User Registration Problem");
 
-            ////UC1
-            //UserRegistrationValidation.ValidateFirstName();
+            //Creating object
+            UserRegistrationValidation userRegistrationValidation = new UserRegistrationValidation();
+
+            //UC1
+            //userRegistrationValidation.ValidateFirstName();
 
             ////UC2
-            //UserRegistrationValidation.ValidateLastName();
+            //userRegistrationValidation.ValidateLastName();
 
-            ////UC3
-            //UserRegistrationValidation.ValidateEmail();
+            //UC3
+            //userRegistrationValidation.ValidateEmail();
 
-            ////UC4
-            //UserRegistrationValidation.ValidateMobileNumber();
+            //UC4
+            //userRegistrationValidation.ValidateMobileNumber();
 
-            //UC5+UC6+UC7+UC8
-            UserRegistrationValidation.ValidatePassword();
+            //UC5 + UC6 + UC7 + UC8
+            //userRegistrationValidation.ValidatePassword();
 
+            //UC9-Sample Emails
+            Console.WriteLine("\nChecking for sample mails :\n ");
+            foreach (string mail in userRegistrationValidation.GetList())
+            {
+                Console.Write(mail + " :  ");
+                userRegistrationValidation.PrintResult(userRegistrationValidation.ValidateSampleEmails(mail));
+            }
             Console.ReadLine();
-
         }
     }
 }

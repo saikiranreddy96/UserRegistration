@@ -8,10 +8,11 @@ using System.Text.RegularExpressions;
 
 namespace UserRegistration
 {
-    internal class UserRegistrationValidation
+    public class UserRegistrationValidation
     {
+       
         //UC1-validate first name
-        public static void ValidateFirstName()
+        public void ValidateFirstName()
         {
             Console.WriteLine("Please Enter your First Name:");
             string firstName = Console.ReadLine();
@@ -29,7 +30,7 @@ namespace UserRegistration
 
 
         //UC2-validate last name
-        public static void ValidateLastName()
+        public void ValidateLastName()
         {
             Console.WriteLine("Please Enter your Last Name:");
             string lastName = Console.ReadLine();
@@ -47,7 +48,7 @@ namespace UserRegistration
 
 
         //UC3-validate email id
-        public static void ValidateEmail()
+        public void ValidateEmail()
         {
             Console.WriteLine("Please Enter your Email-ID:");
             string email = Console.ReadLine();
@@ -64,7 +65,7 @@ namespace UserRegistration
         }
 
         //UC4-validate mobile number
-        public static void ValidateMobileNumber()
+        public void ValidateMobileNumber()
         {
             Console.WriteLine("\nPlease Enter your Mobie Number:");
             string mobileNumber = Console.ReadLine();
@@ -81,7 +82,7 @@ namespace UserRegistration
         }
 
         //validate password-UC5+UC6+UC7+UC8
-        public static void ValidatePassword()
+        public void ValidatePassword()
         {
             Console.WriteLine("\nPlease Enter your Password:");
             string password = Console.ReadLine();
@@ -89,15 +90,54 @@ namespace UserRegistration
             //string password_Pattern = "^(?=.*[a-z])(?=.*[A-Z]).{8,}$";         //must have atleat 1 uppercase
             //string password_Pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$";        //must have atleast 1 number
             string password_Pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[&%$#@?^*!~]).{8,}$";      //must have atleast 1 special character
-
             if (Regex.IsMatch(password, password_Pattern))
             {
-                Console.WriteLine("  Password is Valid");
+                Console.WriteLine("Password is Valid");
             }
             else
             {
                 Console.WriteLine("Password is not Valid");
             }
         }
+
+        //UC9-list of the sample emails
+        public List<string> sampleMails = new List<string>()
+        {
+            "abc@yahoo.com",
+            "abc-100@yahoo.com",
+            "abc.100@yahoo.com",
+            "abc111@abc.com",
+            "abc-100@abc.net",
+            "abc.100@abc.com.au",
+            "abc@1.com",
+            "abc@gmail.com.com",
+            "abc+100@gmail.com"
+        };
+        private static string REGEX_EMAIL2 = "^[a-zA-Z0-9]+([.+-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3})?$"; // fo sample emails
+                                                                                                                                     //Method to test sample emails
+        public bool ValidateSampleEmails(string email)
+        {
+            return Regex.IsMatch(email, REGEX_EMAIL2);
+        }
+        //Method to get the list
+        public List<string> GetList()
+        {
+            return sampleMails;
+        }
+
+        //To print the result
+        public void PrintResult(bool result)
+        {
+            if (result)
+            {
+                Console.WriteLine("Valid.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid.");
+            }
+        }
+        
     }
+
 }
