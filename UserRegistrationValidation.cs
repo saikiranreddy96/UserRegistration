@@ -113,8 +113,9 @@ namespace UserRegistration
             "abc@gmail.com.com",
             "abc+100@gmail.com"
         };
-        private static string REGEX_EMAIL2 = "^[a-zA-Z0-9]+([.+-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3})?$"; // fo sample emails
-                                                                                                                                     //Method to test sample emails
+        private static string REGEX_EMAIL2 = "^[a-zA-Z0-9]+([.+-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3})?$"; // for sample emails
+                                                     
+        //Method to test sample emails
         public bool ValidateSampleEmails(string email)
         {
             return Regex.IsMatch(email, REGEX_EMAIL2);
